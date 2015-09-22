@@ -1,4 +1,4 @@
-{include file="header.tpl"}
+
 <section class="col-sm-*">
 	<div class="contacto"><p>En <span>DADANT</span> nos interesa mucho tu opinión.
 		Déjanos sugerencias o comentarios a través de nuestro formulario de contacto.</p>
@@ -32,4 +32,3 @@
 	<div class="imgcontacto">
 		<img src="image/mail.png" alt="Abeja"/>
 	</div>
-{include file="footer.tpl"}

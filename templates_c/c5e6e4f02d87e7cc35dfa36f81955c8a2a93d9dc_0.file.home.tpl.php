@@ -1,3 +1,31 @@
+<?php /* Smarty version 3.1.24, created on 2015-09-23 00:56:27
+         compiled from "./templates/home.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:7547733175601dc9bcc31a9_46183902%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'c5e6e4f02d87e7cc35dfa36f81955c8a2a93d9dc' => 
+    array (
+      0 => './templates/home.tpl',
+      1 => 1442959113,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '7547733175601dc9bcc31a9_46183902',
+  'has_nocache_code' => false,
+  'version' => '3.1.24',
+  'unifunc' => 'content_5601dc9bcca270_56972305',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_5601dc9bcca270_56972305')) {
+function content_5601dc9bcca270_56972305 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '7547733175601dc9bcc31a9_46183902';
+?>
+
+
 <!--Carousel-->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators-->
@@ -39,3 +67,6 @@
           de calcio y magnesio.</span></li>
         </ul>
 </div>
+<?php }
+}
+?>

@@ -1,4 +1,5 @@
-{include file="header.tpl"}
+
+
 <!--Carousel-->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators-->
@@ -40,4 +41,3 @@
           de calcio y magnesio.</span></li>
         </ul>
 </div>
-{include file="footer.tpl"}

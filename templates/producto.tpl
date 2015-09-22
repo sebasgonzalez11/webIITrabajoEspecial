@@ -1,4 +1,3 @@
-
 		<section>
 			<table class="table productos">
 				<thead>
