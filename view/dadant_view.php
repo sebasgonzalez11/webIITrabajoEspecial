@@ -1,14 +1,18 @@
 <?php
 include_once 'libs/Smarty.class.php';
 
-class DadantView{
+class View{
   private $smarty;
 
-  function __construct(){
+  public function __construct(){
     $this->smarty = new Smarty();
   }
-  function cargarPagina($seccion){
+  public function cargarPagina($seccion){
     $this->smarty->display($seccion.'.tpl');
+  }
+  public function mostrarProductos($productos){
+    $this->smarty->assing('productos', $productos);
+    $this->smarty->display('productos.tpl');
   }
 }
  ?>
