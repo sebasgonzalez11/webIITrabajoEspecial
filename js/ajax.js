@@ -73,12 +73,10 @@ $(document).ready(function(){
         $.getJSON("pass.json", function(data){//funcion que compara los datos ingresados con los del archivo Json
           entradas--;
           if(data.nombre==name && data.clave==pass){
-            $("#contenedor").html(imagenLoading);
-            setTimeout(function(){
               $.ajax({//Inicio de llamado
                 type:"GET",
                 datatype: "html",
-                url:"ingresodedatos.html",
+                url:"index.php?action=panel",
                 success:function(data){//lo que pasa cuando termina
                   $("#contenedor").html(data)
                 },
@@ -86,7 +84,6 @@ $(document).ready(function(){
                   $("#contenedor").html(mensajeError);
                 }
               });
-            },tiempoCarga);
           }else{
           $("#incorrecto").html("Usuario Incorrecto");}
 
@@ -96,4 +93,26 @@ $(document).ready(function(){
       $("#incorrecto").html("Ya intento demasiadas veces. Contacte a su administrador.");//si superaste las 3 intentos de usuario y clave
     event.preventDefault();
   });
+
+
+  $('#formulario').submit(function() {
+    event.preventDefault();
+    var datos=$(this).serialize();
+    var url=$(this).attr('action');
+    $.ajax({
+      type: 'POST',
+      url: url,
+      data: datos,
+      success: function(data) {
+          $("#infoNuevaCategoria").addClass("alert-success");
+          $("#infoNuevaCategoria").html("Categoria Agregada");
+      },
+     error:function(){
+       $("#infoNuevaCategoria").addClass("alert-danger");
+       $("#infoNuevaCategoria").html("No se Agrego la categoria");
+     }
+    });
+  });
+
+
 });

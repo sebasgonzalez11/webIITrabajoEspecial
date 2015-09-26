@@ -6,21 +6,33 @@ class Controller{
   private $view;
   private $model;
 
-  function __construct(){
+  public function __construct(){
     $this->view = new View();
     $this->model = new Model();
   }
-  function cargarPagina($pagina){
+  public function cargarPagina($pagina){
     $this->view->cargarPagina($pagina);
   }
 
-  function agregarProducto(){
-    if(isset($_REQUEST['producto']) && isset($_FILES['urlImage'])){
+  public function cargarPanel(){
+    $this->view->cargarPanel($this->model->getCategorias());
+  }
+
+  public function agregarProducto(){
+    if(isset($_REQUEST['producto']) && isset($_FILES['imagenProducto'])){
       $this->model->agregarProducto($_REQUEST);
     }else{
-      $this->view->mostrarError('La tarea que intenta crear esta vacia');//HACER ESTE METODO
+      $this->view->mostrarError('Error');//HACER ESTE METODO
+    }
+  }
+  public function agregarCategoria(){
+    $estado = false;
+    if(isset($_POST['nuevaCategoria'])){
+      $estado = $this->model->agregarCategoria($_POST['nuevaCategoria']);
+      return $estado;
+    }else{
+      return $estado;
     }
   }
 }
  ?>
- 

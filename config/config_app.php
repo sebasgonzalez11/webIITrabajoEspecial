@@ -6,5 +6,7 @@ class ConfigApp{
   public static $ACTION_PRODUCTO = 'producto';
   public static $ACTION_CONTACTO = 'contacto';
   public static $ACTION_NOSOTROS = 'nosotros';
+  public static $ACTION_PANEL = 'panel';
+  public static $ACTION_NUEVA_CATEGORIA = 'nuevaCategoria';
 }
  ?>

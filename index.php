@@ -24,6 +24,14 @@
         $controller = new Controller();
         $controller->cargarPagina(ConfigApp::$ACTION_HOME);
         break;
+      case ConfigApp::$ACTION_PANEL:
+        $controller = new Controller();
+        $controller->cargarPanel();
+        break;
+      case ConfigApp::$ACTION_NUEVA_CATEGORIA:
+        $controller = new Controller();
+        $controller->agregarCategoria();
+        break;
       default:
         echo 'Página no encontrada';
         break;

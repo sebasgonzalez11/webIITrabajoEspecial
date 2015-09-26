@@ -7,8 +7,14 @@ class View{
   public function __construct(){
     $this->smarty = new Smarty();
   }
+
   public function cargarPagina($seccion){
     $this->smarty->display($seccion.'.tpl');
+  }
+
+  public function cargarPanel($categorias){
+    $this->smarty->assign('categorias', $categorias);
+    $this->smarty->display('panel.tpl');
   }
   public function mostrarProductos($productos){
     $this->smarty->assing('productos', $productos);

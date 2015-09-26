@@ -197,5 +197,9 @@ transition-duration: .5s;
 }
 .dropdown-menu{
 	margin-top: 10px;
-
+}
+.dropdown{
+	margin-top:10px;
+	margin-bottom: 30px;
+	width: 400px;
 }
