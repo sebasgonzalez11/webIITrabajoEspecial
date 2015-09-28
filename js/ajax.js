@@ -104,8 +104,7 @@ $(document).ready(function(){
       url:url,
       data:datos,
       success: function(data) {
-        $('#panel').find('#info').addClass("alert-success");
-        $('#panel').find('#info').html("Agregado");
+        windows.location.reload();
       },
      error:function(){
      }

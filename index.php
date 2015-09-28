@@ -36,6 +36,9 @@
         $controller = new Controller();
         $controller->agregarProducto();
         break;
+      case ConfigApp::$ACTION_UPDATE_PRODUCTO:
+        $controller = new Controller();
+        $controller->updateProducto();
       default:
         echo 'Página no encontrada';
         break;

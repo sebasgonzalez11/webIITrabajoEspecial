@@ -14,10 +14,11 @@ class View{
     $this->smarty->display($seccion.'.tpl');
   }
 
-  public function cargarPanel($categorias, $productos){
+  public function cargarPanel($reCategorias,$categorias, $productos){
     $this->smarty->assign('errores', $this->errores);
     $this->smarty->assign('productos', $productos);
     $this->smarty->assign('categorias', $categorias);
+    $this->smarty->assign('recategorias',$reCategorias);
     $this->smarty->caching = false;
     $this->smarty->display('panel.tpl');
   }

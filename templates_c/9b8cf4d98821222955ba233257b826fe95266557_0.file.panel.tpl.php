@@ -1,5 +1,45 @@
-{include file="header.tpl"}
-{include file="nav.tpl"}
+<?php /* Smarty version 3.1.24, created on 2015-09-29 01:34:24
+         compiled from "./templates/panel.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:11616859985609ce8037ac18_23520140%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '9b8cf4d98821222955ba233257b826fe95266557' => 
+    array (
+      0 => './templates/panel.tpl',
+      1 => 1443483240,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '11616859985609ce8037ac18_23520140',
+  'variables' => 
+  array (
+    'categorias' => 0,
+    'cate' => 0,
+    'recategorias' => 0,
+    'categ' => 0,
+    'productos' => 0,
+    'p' => 0,
+    'errores' => 0,
+    'error' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => '3.1.24',
+  'unifunc' => 'content_5609ce803c05f5_79153702',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_5609ce803c05f5_79153702')) {
+function content_5609ce803c05f5_79153702 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '11616859985609ce8037ac18_23520140';
+echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
+?>
+
+<?php echo $_smarty_tpl->getSubTemplate ("nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
+?>
+
 <div class="container">
   <div class="row">
     <div class="col-md-6">
@@ -40,9 +80,24 @@
               <input type="file" name="imagen" id="imagen" accept="imagen" />
             </div>
             <select class="dropdown" name="categoria">
-              {foreach from=$categorias item=cate}
-              <option value="{$cate['categoria']}">{$cate['categoria']}</option>
-              {/foreach}
+              <?php
+$_from = $_smarty_tpl->tpl_vars['categorias']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['cate'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['cate']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['cate']->value) {
+$_smarty_tpl->tpl_vars['cate']->_loop = true;
+$foreach_cate_Sav = $_smarty_tpl->tpl_vars['cate'];
+?>
+              <option value="<?php echo $_smarty_tpl->tpl_vars['cate']->value['categoria'];?>
+"><?php echo $_smarty_tpl->tpl_vars['cate']->value['categoria'];?>
+</option>
+              <?php
+$_smarty_tpl->tpl_vars['cate'] = $foreach_cate_Sav;
+}
+?>
             </select>
             <button type="submit" class="btn btn-default">Guardar</button>
           </form>
@@ -77,9 +132,24 @@
               <input type="file" name="imagen" id="imagen" accept="imagen" />
             </div>
             <select class="dropdown" name="categoria">
-              {foreach from=$recategorias item=categ}
-              <option value="{$categ['categoria']}">{$categ['categoria']}</option>
-              {/foreach}
+              <?php
+$_from = $_smarty_tpl->tpl_vars['recategorias']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['categ'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['categ']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['categ']->value) {
+$_smarty_tpl->tpl_vars['categ']->_loop = true;
+$foreach_categ_Sav = $_smarty_tpl->tpl_vars['categ'];
+?>
+              <option value="<?php echo $_smarty_tpl->tpl_vars['categ']->value['categoria'];?>
+"><?php echo $_smarty_tpl->tpl_vars['categ']->value['categoria'];?>
+</option>
+              <?php
+$_smarty_tpl->tpl_vars['categ'] = $foreach_categ_Sav;
+}
+?>
             </select>
             <button type="submit" class="btn btn-default">Modificar</button>
           </form>
@@ -103,7 +173,7 @@
         </div>
       </div>
     </div>
-    
+
 
     <div class="col-md-6">
       <div class="panel-body">
@@ -118,14 +188,31 @@
               <td>PRECIO</td>
               <td>CATEGORIA</td>
             </tr>
-            {foreach from=$productos item=p}
+            <?php
+$_from = $_smarty_tpl->tpl_vars['productos']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['p'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['p']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
+$_smarty_tpl->tpl_vars['p']->_loop = true;
+$foreach_p_Sav = $_smarty_tpl->tpl_vars['p'];
+?>
             <tr>
-              <td>{$p['id']}</td>
-              <td>{$p['nombre']}</td>
-              <td>{$p['precio']}</td>
-              <td>{$p['categoria']}</td>
+              <td><?php echo $_smarty_tpl->tpl_vars['p']->value['id'];?>
+</td>
+              <td><?php echo $_smarty_tpl->tpl_vars['p']->value['nombre'];?>
+</td>
+              <td><?php echo $_smarty_tpl->tpl_vars['p']->value['precio'];?>
+</td>
+              <td><?php echo $_smarty_tpl->tpl_vars['p']->value['categoria'];?>
+</td>
             </tr>
-            {/foreach}
+            <?php
+$_smarty_tpl->tpl_vars['p'] = $foreach_p_Sav;
+}
+?>
           </tbody>
         </table>
       </div>
@@ -137,16 +224,37 @@
           <th colspan="3">Errores</th>
         </thead>
         <tbody>
-          {foreach $errores as $error}
+          <?php
+$_from = $_smarty_tpl->tpl_vars['errores']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['error'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['error']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['error']->value) {
+$_smarty_tpl->tpl_vars['error']->_loop = true;
+$foreach_error_Sav = $_smarty_tpl->tpl_vars['error'];
+?>
           <tr>
-            <td class="alert-danger">{$error}</td>
+            <td class="alert-danger"><?php echo $_smarty_tpl->tpl_vars['error']->value;?>
+</td>
           </tr>
-          {/foreach}
+          <?php
+$_smarty_tpl->tpl_vars['error'] = $foreach_error_Sav;
+}
+?>
         </tbody>
       </table>
     </div>
   </div>
 </div>
 
-{include file="footer.tpl"}
-{include file="script.tpl"}
+<?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
+?>
+
+<?php echo $_smarty_tpl->getSubTemplate ("script.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
+?>
+
+<?php }
+}
+?>
