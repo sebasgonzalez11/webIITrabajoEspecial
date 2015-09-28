@@ -28,7 +28,7 @@
 			</div>
 		</div>
 	</form>
-	</section>
-	<div class="imgcontacto">
-		<img src="image/mail.png" alt="Abeja"/>
-	</div>
+</section>
+<div class="imgcontacto">
+	<img src="image/mail.png" alt="Abeja"/>
+</div>

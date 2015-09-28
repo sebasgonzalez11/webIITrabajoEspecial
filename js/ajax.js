@@ -78,7 +78,7 @@ $(document).ready(function(){
                 datatype: "html",
                 url:"index.php?action=panel",
                 success:function(data){//lo que pasa cuando termina
-                  $("#contenedor").html(data)
+                  $("#cargaDePanel").html(data)
                 },
                 error: function(){
                   $("#contenedor").html(mensajeError);
@@ -104,6 +104,8 @@ $(document).ready(function(){
       url:url,
       data:datos,
       success: function(data) {
+        $('#panel').find('#info').addClass("alert-success");
+        $('#panel').find('#info').html("Agregado");
       },
      error:function(){
      }
