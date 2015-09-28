@@ -7,36 +7,40 @@ class Model{
     $this->baseDatos->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }
 
-  public function agregarProducto($nuevoProducto, $imagenProducto){
-    $ruta = $this->subirImagen($imagenProducto);//reemplazar en nuevoProducto la ruta de la imagen a agregar
-    $nuevoProducto['imagenProducto'] = $ruta;
-    $consulta = $this->baseDatos->prepare('INSERT INTO producto (nuevoProducto) VALUES(?)');
-    $consulta->execute(array($nuevoProducto));
-    $id_producto = $this->baseDatos->lastInsertId();
+  public function agregarProducto($nombProducto,$descrProducto,$precProducto,$categProducto,$imagenProducto){
+    try{
+      $ruta = $this->subirImagenes($imagenProducto);
+      $this->baseDatos->beginTransaction();
+      $consulta = $this->baseDatos->prepare('INSERT INTO dadantbd.producto(id,nombre,descripcion,precio,categoria,imagen) VALUES(?,?,?,?,?,?)');
+      $consulta->execute(array(null,$nombProducto,$descrProducto,$precProducto,$categProducto,$ruta));
+      $this->baseDatos->commit();
+    }
+    catch(Exception $e){
+      $this->baseDatos->rollBack();
+    }
   }
-
-  private function subirImagen($archivo){
-    $destino = 'image/productos/'.uniqid().$archivo['name'][$key];
-    move_uploaded_file($archivo['tmp_name'][$key], $destino);
-    return $destino;
+  
+  private function subirImagenes($archivo){
+    $carpeta = "image/productos/";
+    $carpeta = $carpeta . basename( $archivo[ 'name' ] );
+    move_uploaded_file( $archivo[ 'tmp_name' ] , $carpeta);
+    return $carpeta;
   }
 
   public function getProductos(){
-    $productos = array();
-    $consulta = $this->baseDatos->prepare('SELECT * FROM producto');
+    $consulta = $this->baseDatos->prepare('SELECT * FROM dadantbd.producto');
     $consulta->execute();
     return $consulta;
   }
 
   public function borrarProducto($id_prod){
-  $consulta = $this->baseDatos->prepare('DELETE FROM producto WHERE id=?');
-  $consulta->execute(array($id_prod));
+    $consulta = $this->baseDatos->prepare('DELETE FROM producto WHERE id=?');
+    $consulta->execute(array($id_prod));
   }
 
   public function agregarCategoria($nuevaCategoria){
-      $consulta = $this->baseDatos->prepare('INSERT INTO dadantbd.categoria(categoria) VALUES(?)');
-      $consulta->execute(array($nuevaCategoria));
-      return true;
+    $consulta = $this->baseDatos->prepare('INSERT INTO dadantbd.categoria(categoria) VALUES(?)');
+    $consulta->execute(array($nuevaCategoria));
   }
 
   public function getCategorias(){
@@ -45,4 +49,4 @@ class Model{
     return $consulta;
   }
 }
- ?>
+?>

@@ -8,5 +8,6 @@ class ConfigApp{
   public static $ACTION_NOSOTROS = 'nosotros';
   public static $ACTION_PANEL = 'panel';
   public static $ACTION_NUEVA_CATEGORIA = 'nuevaCategoria';
+  public static $ACTION_NUEVO_PRODUCTO = 'nuevoProducto';
 }
  ?>

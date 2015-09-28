@@ -15,23 +15,26 @@ class Controller{
   }
 
   public function cargarPanel(){
-    $this->view->cargarPanel($this->model->getCategorias());
+    $this->view->cargarPanel($this->model->getCategorias(),$this->model->getProductos());
   }
 
   public function agregarProducto(){
-    if(isset($_REQUEST['producto']) && isset($_FILES['imagenProducto'])){
-      $this->model->agregarProducto($_REQUEST);
-    }else{
-      $this->view->mostrarError('Error');//HACER ESTE METODO
+    if(isset($_POST['nombre']) && isset($_POST['precio'])){
+      $this->model->agregarProducto($_POST['nombre'],$_POST['descripcion'],$_POST['precio'],$_POST['categoria'],
+       $_FILES['imagen']);
+       $this->cargarPanel();
+     }
+     else{
+      $this->view->mostrarError('Error');
     }
   }
+
   public function agregarCategoria(){
-    $estado = false;
     if(isset($_POST['nuevaCategoria'])){
-      $estado = $this->model->agregarCategoria($_POST['nuevaCategoria']);
-      return $estado;
+      $this->model->agregarCategoria($_POST['nuevaCategoria']);
+      $this->cargarPanel();
     }else{
-      return $estado;
+      $this->view->mostrarError('No se agrego la categoria');
     }
   }
 }

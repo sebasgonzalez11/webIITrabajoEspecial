@@ -32,6 +32,10 @@
         $controller = new Controller();
         $controller->agregarCategoria();
         break;
+      case ConfigApp::$ACTION_NUEVO_PRODUCTO:
+        $controller = new Controller();
+        $controller->agregarProducto();
+        break;
       default:
         echo 'Página no encontrada';
         break;

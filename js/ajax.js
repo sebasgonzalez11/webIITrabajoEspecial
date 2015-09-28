@@ -100,19 +100,14 @@ $(document).ready(function(){
     var datos=$(this).serialize();
     var url=$(this).attr('action');
     $.ajax({
-      type: 'POST',
-      url: url,
-      data: datos,
+      type:'POST',
+      url:url,
+      data:datos,
       success: function(data) {
-          $("#infoNuevaCategoria").addClass("alert-success");
-          $("#infoNuevaCategoria").html("Categoria Agregada");
       },
      error:function(){
-       $("#infoNuevaCategoria").addClass("alert-danger");
-       $("#infoNuevaCategoria").html("No se Agrego la categoria");
      }
     });
   });
-
 
 });
