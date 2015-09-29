@@ -33,11 +33,6 @@ class Model{
     return $consulta;
   }
 
-  public function borrarProducto($id_prod){
-    $consulta = $this->baseDatos->prepare('DELETE FROM producto WHERE id=?');
-    $consulta->execute(array($id_prod));
-  }
-
   public function agregarCategoria($nuevaCategoria){
     $consulta = $this->baseDatos->prepare('INSERT INTO categoria(categoria) VALUES(?)');
     $consulta->execute(array($nuevaCategoria));
@@ -51,10 +46,20 @@ class Model{
   }
 
   public function updateProducto($id,$nombProducto,$descrProducto,$precProducto,$categProducto,$imagenProducto){
-    $ruta = $this->subirImagenes($imagenProducto);
-    $consulta = $this->baseDatos->prepare('UPDATE producto SET nombre=?,descripcion=?,precio=?,categoria=?,imagen=?
-   WHERE id=?');
-    $consulta->execute(array($nombProducto,$descrProducto,$precProducto,$categProducto,$ruta,$id));
+    try{
+      $ruta = $this->subirImagenes($imagenProducto);
+      $consulta = $this->baseDatos->prepare('UPDATE producto SET nombre=?,descripcion=?,precio=?,categoria=?,imagen=?
+        WHERE id=?');
+        $consulta->execute(array($nombProducto,$descrProducto,$precProducto,$categProducto,$ruta,$id));
+      }
+      catch(Exception $e){
+        $this->baseDatos->rollBack();
+      }
+    }
+
+    public function deleteProducto($id){
+      $consulta = $this->baseDatos->prepare('DELETE FROM producto WHERE id=?');
+      $consulta->execute(array($id));
+    }
   }
-}
-?>
+  ?>

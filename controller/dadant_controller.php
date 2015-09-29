@@ -44,5 +44,11 @@ class Controller{
       $this->cargarPanel();
     }
   }
+  public function deleteProducto(){
+    if(isset($_POST['id'])){
+      $this->model->deleteProducto($_POST['id']);
+      $this->cargarPanel();
+    }
+  }
 }
  ?>

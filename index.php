@@ -39,6 +39,11 @@
       case ConfigApp::$ACTION_UPDATE_PRODUCTO:
         $controller = new Controller();
         $controller->updateProducto();
+        break;
+      case ConfigApp::$ACTION_DELETE_PRODUCTO:
+        $controller = new Controller();
+        $controller->deleteProducto();
+        break;
       default:
         echo 'Página no encontrada';
         break;

@@ -92,18 +92,20 @@
       <div class="panel panel-default">
         <div class="panel-heading">Eliminar Producto</div>
         <div class="panel-body">
-          <div class="form-group">
-            <label for="itemid">Id</label>
-            <input type="text"  class="form-control" id="productoDelete" placeholder="Ingrese el id del Producto">
-          </div>
-          <button class="btn btn-default" onClick="">Borrar</button>
+          <form id="formulario" action="index.php?action=deleteProducto" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="itemid">Id</label>
+              <input type="text"  name="id" class="form-control" id="productoDelete" placeholder="Ingrese el id del Producto">
+            </div>
+            <button class="btn btn-default">Borrar</button>
+          </form>
         </div>
         <div class="panel-footer">
           <div id="info" class="alert" role="alert"></div>
         </div>
       </div>
     </div>
-    
+
 
     <div class="col-md-6">
       <div class="panel-body">

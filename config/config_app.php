@@ -10,5 +10,6 @@ class ConfigApp{
   public static $ACTION_NUEVA_CATEGORIA = 'nuevaCategoria';
   public static $ACTION_NUEVO_PRODUCTO = 'nuevoProducto';
   public static $ACTION_UPDATE_PRODUCTO = 'updateProducto';
+  public static $ACTION_DELETE_PRODUCTO = 'deleteProducto';
 }
  ?>
