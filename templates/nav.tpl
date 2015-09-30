@@ -4,15 +4,14 @@
     <li class="dropdown">
       <a href="" class="dropdown-toggle btnnav" data-toggle="dropdown" > <i class="fa fa-lg fa-user"></i></a>
       <div class="dropdown-menu">
-        <form id="formLogin" class="form container-fluid">
+        <form action="index.php?action=formLogin" method="POST" class="form container-fluid">
           <div class="form-group">
-            <input class="form-control" name="username" id="name" type="text" placeholder="Usuario">
+            <input class="form-control" name="username" id="username"  type="text" placeholder="Usuario" required>
           </div>
           <div class="form-group">
-            <input class="form-control" name="password" id="pass" type="password" placeholder="Password">
-            <p id="incorrecto"></p>
+            <input class="form-control" name="password" id="password" type="password" placeholder="Password" required>
           </div>
-          <button type="button" id="datos" class="btn btn-block">Entrar</button>
+          <button type="submit" class="btn btn-block">Entrar</button>
         </form>
       </div>
     </li>

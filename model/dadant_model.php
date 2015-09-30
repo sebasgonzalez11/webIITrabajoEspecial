@@ -61,5 +61,18 @@ class Model{
       $consulta = $this->baseDatos->prepare('DELETE FROM producto WHERE id=?');
       $consulta->execute(array($id));
     }
+
+    public function login($user,$pass){
+      $consulta = $this->baseDatos->prepare('SELECT * FROM login WHERE username=? AND password=?');
+      $consulta->bindParam(1,$user);
+      $consulta->bindParam(2,$pass);
+      $consulta->execute();
+      if($consulta->rowCount() == 1){
+          return true;
+        }
+      else{
+      return false;
+    }
+    }
   }
   ?>

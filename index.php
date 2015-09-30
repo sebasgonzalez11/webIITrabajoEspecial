@@ -44,6 +44,10 @@
         $controller = new Controller();
         $controller->deleteProducto();
         break;
+      case ConfigApp::$ACTION_FORMLOGIN:
+        $controller = new Controller();
+        $controller->login();
+        break;
       default:
         echo 'Página no encontrada';
         break;
