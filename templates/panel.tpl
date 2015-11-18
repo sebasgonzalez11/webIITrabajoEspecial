@@ -1,5 +1,9 @@
 {include file="header.tpl"}
-{include file="nav.tpl"}
+<nav>
+  <ul class="nav-justified">
+    <li class="logo"><a href="index.php" class="btnnav"><img src="image/logo.png"/></a></li>
+  </ul>
+</nav>
 <div class="container">
   <div class="row">
     <div class="col-md-6">
@@ -149,6 +153,5 @@
     </div>
   </div>
 </div>
-
 {include file="footer.tpl"}
 {include file="script.tpl"}

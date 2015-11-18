@@ -1,21 +1,13 @@
 <?php
+include_once 'controller/dadant_controller.php';
 include_once 'view/dadant_view.php';
 include_once 'model/dadant_model.php';
 
-class Controller{
-  private $view;
-  private $model;
+class PanelController extends Controller{
 
   public function __construct(){
     $this->view = new View();
-    $this->model = new Model();
-  }
-  public function cargarPagina($pagina){
-    $this->view->cargarPagina($pagina);
-  }
-
-  public function cargarPanel(){
-    $this->view->cargarPanel($this->model->getCategorias(),$this->model->getCategorias(),$this->model->getProductos());
+    $this->model = new PanelModel();
   }
 
   public function agregarProducto(){
@@ -51,16 +43,4 @@ class Controller{
     }
   }
 
-  public function login(){
-    if(isset($_POST['username']) && isset($_POST['password'])){
-      if($this->model->login($_POST['username'],$_POST['password'])){
-        $this->cargarPanel();
-      }
-      else{
-        $pagina='index';
-        $this->cargarPagina($pagina);
-      }
-    }
-  }
-}
  ?>

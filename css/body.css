@@ -152,8 +152,12 @@ div.imgcontacto img{
 }
 
 /*PRODUCTOS*/
+.seleccionCategoria{
+	margin-top:80px;
+	margin-bottom: -16px;
+}
 .productos{
-	margin-top:120px;
+	margin-top:40px;
 	font-size: 1em;
 	width:100%;
 	text-align: center;
@@ -166,7 +170,7 @@ div.imgcontacto img{
 	font-size:1.4em;
 }
 .productos tr td:first-child {
-	width:75%;
+	width:14%;
 	text-align: left;
 }
 .productos th{
@@ -183,6 +187,7 @@ div.imgcontacto img{
 	text-align: center;
 	padding:3px;
 }
+.productos
 tr{
 transition-duration: .5s;
 }
@@ -201,5 +206,5 @@ transition-duration: .5s;
 .dropdown{
 	margin-top:10px;
 	margin-bottom: 30px;
-	width: 400px;
+	width: 30%;
 }
