@@ -1,0 +1,6 @@
+Seba: exporte la nueva estructura de la BD, ahora también esta la tabla usuario.
+Vas a tener que cargar un usuario a mano desde phpmyadmin porque sólo funciona
+leyendo hash, te paso el hash para "1234". Esa es la contraseña que le puse.
+El nombre de usuario pone el que quieras, es sólo para que puedas entrar al AMB.
+
+hash: $2a$12$Ys/8j7d4D6ctM4gx8ZPyWeQ92BCpyiA.PQLtxwo5M/FTeQrfK9M62

@@ -8,5 +8,6 @@ class ConfigApp{
   public static $ACTION_NOSOTROS = 'nosotros';
   public static $ACTION_MOSTRAR_POR_CATEGORIA = 'mostrarPorCategoria';
   public static $ACTION_FORMLOGIN = 'formLogin';
+  public static $ACTION_CARGA_PANEL = 'panel';
 }
  ?>

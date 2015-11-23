@@ -1,23 +1,25 @@
 $(document).ready(function(){
   "use strict";
 
-  $('#formulario').submit(function() {
-    event.preventDefault();
-    var datos=$(this).serialize();
-    var url=$(this).attr('action');
+  //FORMULARIO LOGIN-->
+  $("#login").click(function(){
     $.ajax({
-      type:'POST',
-      url:url,
-      data:datos,
-      success: function(data) {
-        windows.location.reload();
+      type : "POST",
+      dataType : "json",
+      cache: false,
+      processData: false,
+      contentType: false,
+      url:"index.php?action=formLogin",
+      data: $(this).serialize(),
+      success:function(data){
       },
-      error:function(){
+      error: function(){
       }
     });
+    event.preventDefault();
   });
 
-  //LLAMADO A LAS SECCIONES
+  //LLAMADO A LAS SECCIONES-->
   $("#home").click(function(){
     event.preventDefault();
     $.ajax({

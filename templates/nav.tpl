@@ -10,6 +10,13 @@
           <div class="form-group">
             <input class="form-control" name="password" id="password" type="password" placeholder="Password" required>
           </div>
+          {if count($errores) gt 0}
+          <div id='error' class="alert alert-danger" role="alert">
+            {foreach $errores as $error}
+              {$error}
+            {/foreach}
+          </div>
+          {/if}
           <button type="submit" class="btn btn-block">Entrar</button>
         </form>
       </div>
@@ -17,7 +24,7 @@
     <li class="logo"><img src="image/logo.png"/></li>
     <li><a href="#" class="btnnav" id="home">Home</a></li>
     <li><a href="#" class="btnnav" id="nosotros">Nosotros</a></li>
-    <li><a href="#" class="btnnav" id="producto">Productos</a></li>
+    <li><a href="#" class="btnnav" id="productos">Productos</a></li>
     <li><a href="#" class="btnnav" id="contacto">Contacto</a></li>
   </ul>
 </nav>

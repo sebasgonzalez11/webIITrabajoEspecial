@@ -1,0 +1,12 @@
+<tr>
+  <td>ID</td>
+  <td>NOMBRE</td>
+  <td>PRECIO</td>
+  <td>CATEGORIA</td>
+</tr>
+<tr>
+  <td>{{id}}</td>
+  <td>{{nombre}}</td>
+  <td>{{precio}}</td>
+  <td>{{categoria}}</td>
+</tr>
