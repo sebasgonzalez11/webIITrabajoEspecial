@@ -14,4 +14,21 @@ $(document).ready(function(){
       }
     });
   });
+
+  $('body').on('click','#getProducto', function(event){
+    var href = $(this).attr('prodid');
+    var datos={id:href}
+    $.ajax({
+      type:'POST',
+      url:'index.php?action=getProducto',
+      data:datos,
+      success: function(data) {
+        $('#boxDetalle').html('');
+        $('#boxDetalle').hide().append(data).fadeIn(600);
+      },
+      error:function(data){
+      }
+    });
+  });
+
 });

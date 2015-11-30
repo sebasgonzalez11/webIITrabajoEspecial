@@ -1,1 +1,1 @@
-<option value="{{categoria}}">{{categoria}}</option>
+<option value="{{id}}">{{categoria}}</option>

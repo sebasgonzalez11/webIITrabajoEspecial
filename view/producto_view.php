@@ -17,5 +17,10 @@ class ProductoView extends View{
     $this->smarty->caching = false;
     $this->smarty->display('producto.tpl');
   }
+  public function cargarbyid($producto){
+    $this->smarty->assign('producto',$producto);
+    $this->smarty->caching = false;
+    $this->smarty->display('single_producto.tpl');
+  }
 }
  ?>

@@ -192,6 +192,11 @@ tr{
 transition-duration: .5s;
 }
 .productos tr:hover{background-color: #fff;}
+#getProducto{
+	text-decoration: none;
+	color: #444;
+}
+#getProducto a:focus{color: #444;}
 
 /*FORMULARIO USUARIOS*/
 #incorrecto{
@@ -207,4 +212,15 @@ transition-duration: .5s;
 	margin-top:10px;
 	margin-bottom: 30px;
 	width: 30%;
+}
+
+/*PANEL*/
+.nameUser{
+	text-align: right;
+	margin-right: 2%;
+	margin-top: -8px;
+}
+#logout{
+	text-decoration: none;
+	margin-left: 0.2%;
 }

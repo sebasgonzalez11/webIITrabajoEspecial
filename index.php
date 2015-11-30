@@ -38,9 +38,17 @@
         $controller = new LoginController();
         $controller->login();
         break;
+      case ConfigApp::$ACTION_FORMLOGOUT:
+        $controller = new LoginController();
+        $controller->logout();
+        break;
       case ConfigApp::$ACTION_CARGA_PANEL:
         $controller = new PanelController();
         $controller->cargar();
+        break;
+      case ConfigApp::$ACTION_GETPRODUCTO:
+        $controller = new ProductoController();
+        $controller->cargarbyid();
         break;
       default:
         echo 'Página no encontrada';

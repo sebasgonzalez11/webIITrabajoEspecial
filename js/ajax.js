@@ -3,21 +3,22 @@ $(document).ready(function(){
 
   //FORMULARIO LOGIN-->
   $("#login").click(function(){
+    var data = {'username':$('#username').val(),'password':$('#password').val()}
     $.ajax({
-      type : "POST",
-      dataType : "json",
-      cache: false,
-      processData: false,
-      contentType: false,
+      type:"POST",
+      datatype: "JSON",
       url:"index.php?action=formLogin",
-      data: $(this).serialize(),
+      data: data,
       success:function(data){
+        window.location.replace("index.php?action=panel");
       },
       error: function(){
+        alert("error");
       }
     });
     event.preventDefault();
   });
+
 
   //LLAMADO A LAS SECCIONES-->
   $("#home").click(function(){

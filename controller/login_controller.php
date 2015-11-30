@@ -16,13 +16,14 @@ class LoginController extends Controller {
   }
 
   public function login() {
-    if(isset($_POST["username"]) && isset($_POST["password"])){
-      $email = $_POST["username"];
-      $pass = $_POST["password"];
+    if(isset($_REQUEST["username"]) && isset($_REQUEST["password"])){
+      $email = $_REQUEST["username"];
+      $pass = $_REQUEST["password"];
       $usuario = $this->model->getUsuario($email);
       if(password_verify($pass, $usuario['password'])){
         session_start();
         $_SESSION["email"] = $email;
+        $_SESSION["expire"]= time();
         header("Location: index.php?action=panel");
         die();
       }
@@ -32,7 +33,7 @@ class LoginController extends Controller {
     }
   }
 
-  function logout(){
+  public function logout(){
     session_start();
     session_destroy();
     header("Location: index.php");

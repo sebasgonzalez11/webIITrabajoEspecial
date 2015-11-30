@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-11-18 21:25:12
+<?php /* Smarty version 3.1.24, created on 2015-11-29 02:00:38
          compiled from "./templates/nav.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1220963268564cdea8b40086_36451600%%*/
+/*%%SmartyHeaderCode:1364960580565a4e36032ac0_72211154%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a028bcb59d127f86839af05f2968269d99e65874' => 
     array (
       0 => './templates/nav.tpl',
-      1 => 1447878311,
+      1 => 1448757528,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1220963268564cdea8b40086_36451600',
+  'nocache_hash' => '1364960580565a4e36032ac0_72211154',
   'variables' => 
   array (
     'errores' => 0,
@@ -21,20 +21,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_564cdea8b73b13_30601773',
+  'unifunc' => 'content_565a4e3603e370_80259906',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_564cdea8b73b13_30601773')) {
-function content_564cdea8b73b13_30601773 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_565a4e3603e370_80259906')) {
+function content_565a4e3603e370_80259906 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1220963268564cdea8b40086_36451600';
+$_smarty_tpl->properties['nocache_hash'] = '1364960580565a4e36032ac0_72211154';
 ?>
 <nav>
   <ul class="nav-justified">
     <li class="dropdown">
       <a href="" class="dropdown-toggle btnnav" data-toggle="dropdown" > <i class="fa fa-lg fa-user"></i></a>
       <div class="dropdown-menu">
-        <form action="index.php?action=formLogin" method="POST" class="form container-fluid">
+        <form enctype="multipart/form-data" class="form container-fluid">
           <div class="form-group">
             <input class="form-control" name="username" id="username"  type="text" placeholder="Usuario" required>
           </div>
@@ -42,8 +42,8 @@ $_smarty_tpl->properties['nocache_hash'] = '1220963268564cdea8b40086_36451600';
             <input class="form-control" name="password" id="password" type="password" placeholder="Password" required>
           </div>
           <?php if (count($_smarty_tpl->tpl_vars['errores']->value) > 0) {?>
-          <div id='error' class="alert alert-danger" role="alert">
-            <?php
+            <div id='error' class="alert alert-danger" role="alert">
+              <?php
 $_from = $_smarty_tpl->tpl_vars['errores']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
@@ -54,15 +54,15 @@ foreach ($_from as $_smarty_tpl->tpl_vars['error']->value) {
 $_smarty_tpl->tpl_vars['error']->_loop = true;
 $foreach_error_Sav = $_smarty_tpl->tpl_vars['error'];
 ?>
-              <?php echo $_smarty_tpl->tpl_vars['error']->value;?>
+                <?php echo $_smarty_tpl->tpl_vars['error']->value;?>
 
-            <?php
+                <?php
 $_smarty_tpl->tpl_vars['error'] = $foreach_error_Sav;
 }
 ?>
-          </div>
+            </div>
           <?php }?>
-          <button type="submit" class="btn btn-block">Entrar</button>
+          <button type="submit" id="login" class="btn btn-block">Entrar</button>
         </form>
       </div>
     </li>
